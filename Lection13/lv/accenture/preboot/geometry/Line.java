@@ -1,37 +1,26 @@
 package lv.accenture.preboot.geometry;
 
 public class Line {
-	private Point a;
-	private Point b;
+	private Point start;
+	private Point end;
 	
-	public Line(Point a, Point b) {
-		this.a = a;
-		this.b = b;
-	}
-
-	public Point getA() {
-		return a;
-	}
-
-	public void setA(Point a) {
-		this.a = a;
-	}
-
-	public Point getB() {
-		return b;
-	}
-
-	public void setB(Point b) {
-		this.b = b;
+	public Line(Point start, Point end) {
+		this.start = start;
+		this.end = end;
 	}
 	
 	public void printSelf() {
-		System.out.println("a[x]: " + a.getX() + " a[y]: " + a.getY());
-		System.out.println("b[x]: " + b.getX() + " b[y]: " + b.getY());
+		System.out.println("a[x]: " + start.getX() + " a[y]: " + start.getY());
+		System.out.println("b[x]: " + end.getX() + " b[y]: " + end.getY());
 	}
-
+	
 	public double length() {
-		return 0d;
+		int diffX = end.getX() - start.getX();
+		int diffY = end.getY() - start.getY();
+		double catet1Square = Math.pow(diffX, 2); // diffX * diffX
+		double catet2Square = Math.pow(diffY, 2); // diffY * diffY
+		double result = Math.sqrt(catet1Square + catet2Square);
+		return result;
 	}
 	
 	
