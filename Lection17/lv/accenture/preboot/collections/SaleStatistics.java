@@ -1,5 +1,7 @@
 package lv.accenture.preboot.collections;
 
+import java.util.HashMap;
+
 public class SaleStatistics {
 
     public static void main(String[] args) {
@@ -22,6 +24,13 @@ public class SaleStatistics {
         };
 
         // Collect & print sum by each category
+
+
+        // Calculate purchase sum, adjusted by discounts
+        HashMap<String, Integer> clientCategoryDiscount = new HashMap<>();
+        clientCategoryDiscount.put("food", 5);
+        clientCategoryDiscount.put("toys", 10);
+        clientCategoryDiscount.put("clothes", 20);
     }
 
 }
