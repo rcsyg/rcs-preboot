@@ -1,0 +1,13 @@
+1) Tic-tac-toe
+
+2) Hangman
+
+3) Cows & bulls (mastermind)
+
+4) Battleships
+
+5) 2048
+
+6) Minesweeper
+
+7) TODO manager
