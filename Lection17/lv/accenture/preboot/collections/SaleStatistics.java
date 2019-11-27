@@ -5,6 +5,12 @@ import java.util.HashMap;
 public class SaleStatistics {
 
     public static void main(String[] args) {
+
+        HashMap<String, Integer> clientCategoryDiscount = new HashMap<>();
+        clientCategoryDiscount.put("food", 5);
+        clientCategoryDiscount.put("toys", 10);
+        clientCategoryDiscount.put("clothes", 20);
+
         CheckEntry[] checkEntries = {
                 new CheckEntry("Santa's suit", "clothes", 49.99, 1),
                 new CheckEntry("Deer sweater", "clothes", 24.99, 1),
@@ -23,14 +29,9 @@ public class SaleStatistics {
                 new CheckEntry("Olivie salad 1KG", "food", 4.99, 5),
         };
 
-        // Collect & print sum by each category
+        // 1) Collect & print sum by each category
 
-
-        // Calculate purchase sum, adjusted by discounts
-        HashMap<String, Integer> clientCategoryDiscount = new HashMap<>();
-        clientCategoryDiscount.put("food", 5);
-        clientCategoryDiscount.put("toys", 10);
-        clientCategoryDiscount.put("clothes", 20);
+        // 2) Calculate purchase sum, adjusted by discounts
     }
 
 }
