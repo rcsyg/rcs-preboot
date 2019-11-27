@@ -13,6 +13,17 @@ public class StudentMarks {
         studentMarks.put("Pupka Vasykin", Arrays.asList(9, 10, 10, 10, 8, 10, 9));
 
         // Calculate & print average mark for each student
+        for(String studentName : studentMarks.keySet()) {
+            List<Integer> marks = studentMarks.get(studentName);
+
+            double sum = 0;
+            for(Integer mark : marks) {
+                sum += mark;
+            }
+
+            double avg = sum / marks.size();
+            System.out.println("Student : " + studentName + " : " + avg);
+        }
     }
 
 }
