@@ -1,6 +1,7 @@
 package lv.accenture.preboot.collections;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class SaleStatistics {
 
@@ -30,8 +31,35 @@ public class SaleStatistics {
         };
 
         // 1) Collect & print sum by each category
+        Map<String, Double> sumByCategories = new HashMap<>();
+        for(CheckEntry item : checkEntries) {
+            String category = item.getCategory();
+            double sum = item.getPrice() * item.getQuantity();
+            if (sumByCategories.containsKey(category)) {
+                double existingSum = sumByCategories.get(category);
+                existingSum = existingSum + sum;
+                sumByCategories.put(category, existingSum);
+            } else {
+                sumByCategories.put(category, sum);
+            }
+        }
+
+        System.out.println(sumByCategories);
 
         // 2) Calculate purchase sum, adjusted by discounts
+
+        Double finalSum = 0d;
+        for (String key : sumByCategories.keySet()) {
+            Double value = sumByCategories.get(key);
+            if (clientCategoryDiscount.containsKey(key)) {
+                Integer discount = clientCategoryDiscount.get(key);
+                value = (value * (1 - discount * 0.01));
+            }
+            System.out.println("Sum by category " + key + " (with discount) : " + value);
+            finalSum = finalSum + value;
+        }
+
+        System.out.println("Final sum : " + finalSum);
     }
 
 }
